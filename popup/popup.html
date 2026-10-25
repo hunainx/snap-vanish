@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Snap Vanish</title>
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<header class="top">
+  <h1 class="wordmark"><span>Snap</span><span class="vanish">Vanish</span><span class="drift" aria-hidden="true"></span></h1>
+  <button class="switch" id="enabled" role="switch" aria-checked="true" aria-label="Snap Vanish on or off"><span></span></button>
+</header>
+
+<section class="status" aria-live="polite">
+  <p class="headline" id="headline">Checking this tab…</p>
+  <p class="detail" id="detail"></p>
+</section>
+
+<button class="btn primary snap" id="snap">Snap now</button>
+<p class="shortcut">Shortcut <span id="keys"><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></span> <button class="btn quiet" id="changeKeys">Change</button></p>
+
+<section class="group">
+  <h2>Snap and mic</h2>
+  <label class="slider">
+    <span class="row"><span>Sensitivity</span><output id="sensOut">5</output></span>
+    <input type="range" id="sensitivity" min="1" max="10" step="1">
+    <span class="ends"><span>Strict</span><span>Easy</span></span>
+  </label>
+  <label class="check"><input type="checkbox" id="requireSound"><span>Confirm with the snap's click sound</span></label>
+  <label class="check"><input type="checkbox" id="syncMuteButton"><span>Also click the meeting's mute button</span></label>
+</section>
+
+<section class="group">
+  <h2>Dust</h2>
+  <label class="slider">
+    <span class="row"><span>Duration</span><output id="durOut">3.0 s</output></span>
+    <input type="range" id="duration" min="1.5" max="8" step="0.5">
+  </label>
+  <fieldset class="dir">
+    <legend>Direction <span class="hint">as others see you</span></legend>
+    <div class="seg" id="direction">
+      <label><input type="radio" name="dir" value="left"><span>Left</span></label>
+      <label><input type="radio" name="dir" value="right"><span>Right</span></label>
+      <label><input type="radio" name="dir" value="up"><span>Up</span></label>
+      <label><input type="radio" name="dir" value="scatter"><span>Scatter</span></label>
+    </div>
+  </fieldset>
+  <label class="check shadow"><input type="checkbox" id="clearShadow"><span>Also clear my shadow off the wall (beta)</span></label>
+</section>
+
+
+<footer>
+  <button class="btn quiet" id="practice">Practise without a meeting</button>
+  <button class="btn quiet" id="relearn" disabled>Re-learn the room</button>
+  <p class="privacy">Your video and audio stay on this computer.</p>
+</footer>
+<script src="popup.js"></script>
+</body>
+</html>

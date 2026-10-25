@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practise your snap — Snap Vanish</title>
+<link rel="stylesheet" href="../popup/theme.css">
+<link rel="stylesheet" href="try.css">
+<script src="../content/inject.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="wordmark"><span>Snap</span><span class="vanish">Vanish</span><span class="drift" aria-hidden="true"></span></h1>
+    <p class="lede">Practise your snap before the meeting. What you see below is exactly what the other people on the call would see. Your camera stays on this computer.</p>
+  </header>
+
+  <section class="stage">
+    <div class="screen">
+      <video id="out" autoplay muted playsinline></video>
+      <div class="empty" id="empty">
+        <p>Your camera is off.</p>
+        <button class="btn primary" id="start">Turn on camera and mic</button>
+      </div>
+      <p class="badge" id="stateBadge" hidden></p>
+    </div>
+
+    <aside class="check" aria-live="polite">
+      <h2>Snap check</h2>
+      <ul class="steps">
+        <li><span class="dot" id="dSet"></span><div><strong>Fingers set</strong><span>Press your thumb against your middle fingertip</span></div></li>
+        <li><span class="dot" id="dSnap"></span><div><strong>Snap motion</strong><span>Middle finger flicks down to your palm</span></div></li>
+        <li><span class="dot" id="dClick"></span><div><strong>Click heard</strong><span id="clickHint">The sharp sound of the snap</span></div></li>
+      </ul>
+      <div class="meter" aria-label="Microphone level"><div id="level"></div></div>
+      <ol class="log" id="log"></ol>
+    </aside>
+  </section>
+
+  <section class="controls">
+    <button class="btn primary" id="snap" disabled>Snap now</button>
+    <button class="btn" id="reset" disabled>Re-learn the room</button>
+    <p class="status" id="status">Waiting for camera</p>
+  </section>
+
+  <section class="tips">
+    <h2>Getting a clean vanish</h2>
+    <ul>
+      <li>Sit still for a few seconds after the camera starts, then lean left and right once. Every bit of wall the camera sees behind you is used as the real background; the rest is filled in by the on-device AI.</li>
+      <li>Snap with your hand clearly in view, palm roughly facing the camera, about chest height.</li>
+      <li>Snap again to come back. Your mic unmutes as you reappear.</li>
+      <li>If the camera moves, use Re-learn the room.</li>
+    </ul>
+  </section>
+</main>
+<script src="try.js"></script>
+</body>
+</html>
